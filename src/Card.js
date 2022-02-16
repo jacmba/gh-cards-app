@@ -2,14 +2,15 @@ import React from "react";
 
 export default class Card extends React.Component {
   render() {
+    const profile = this.props
     return (
       <div className="github-profile">
-        <img src="https://placehold.it/75" />
+        <img src={profile.avatar_url} alt="Avatar" />
         <div className="info">
-          <div className="name">Name here...</div>
-          <div className="company">Company here...</div>
+          <div className="name">{profile.name || profile.login}</div>
+          <div className="company">{profile.company || 'Unknown'}</div>
         </div>
       </div>
-    )
+    );
   }
 }
